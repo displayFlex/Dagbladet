@@ -9,7 +9,7 @@ const Titles = () => {
                     <div key={list.indexOf(x)}>
                         {x.columns.map(y =>
                             <a key={y.title} href={y.url}>
-                                <p style={{textAlign: "center"}}>{y.title}</p>
+                                <p style={{ textAlign: "center" }}>{y.title}</p>
                             </a>
                         )}
                     </div>)

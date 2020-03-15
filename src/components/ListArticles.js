@@ -1,18 +1,23 @@
-import React from "react"
-import Context from "./Context"
+import React, { useEffect, useContext } from "react"
 import Columns from "./Columns"
+import MyContext from "./Context";
 
 const ListArticles = () => {
+
+    let myContext = useContext(MyContext);
+
+    useEffect(() => {
+        if (myContext.isDeleted === true) {
+            setTimeout(() => {
+                myContext.openModal()
+            }, 2000);
+        }
+    });
+
     return (
-        <Context.Consumer>
-            {({ list }) => (
-                <div className=" d-flex flex-column align-items-center justify-content-center">
-                    {list && list.length > 0 && list.map(x =>
-                        <Columns key={list.indexOf(x)} item={x} parentId={list.indexOf(x)} />
-                    )}
-                </div>
-            )}
-        </Context.Consumer>
+        myContext.list && myContext.list.length > 0 && myContext.list.map(x =>
+            <Columns key={myContext.list.indexOf(x)} item={x} parentId={myContext.list.indexOf(x)} />
+        )
     )
 }
 
