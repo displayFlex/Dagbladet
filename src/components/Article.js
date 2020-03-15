@@ -35,7 +35,7 @@ const Article = (props) => {
                 </a> : <div style={{ margin: "15px 0" }}>
                         <input type="text" defaultValue={item.title} onChange={(e) => changeTitle(e.target.value)} />
                         <button
-                            titempe="button"
+                            type="button"
                             className="btn btn-info"
                             onClick={sendTitleForEditing}
                         >

@@ -1,10 +1,10 @@
 import React, { useEffect, useContext } from "react"
 import Columns from "./Columns"
-import MyContext from "./Context";
+import Context from "./Context";
 
 const ListArticles = () => {
 
-    let myContext = useContext(MyContext);
+    let myContext = useContext(Context);
 
     useEffect(() => {
         if (myContext.isDeleted === true) {
